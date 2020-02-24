@@ -13,6 +13,7 @@ export class LoginPage implements OnInit {
 
   username: string = ""
   password: string = ""
+  path: string = "/user-home"
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -32,7 +33,7 @@ export class LoginPage implements OnInit {
           username,
           uid: res.user.uid
         })
-        this.router.navigate(['/user-home'])
+        this.router.navigate([this.path])
       }
     } catch(err){
       console.dir(err)
@@ -40,5 +41,13 @@ export class LoginPage implements OnInit {
         console.log("User not found")
       }
     }
+  }
+
+  userPath(){
+    this.path='/user-home'
+  }
+
+  carerPath(){
+    this.path="/carer-home"
   }
 }

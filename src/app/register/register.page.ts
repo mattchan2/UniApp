@@ -55,8 +55,8 @@ export class RegisterPage implements OnInit {
         uid: res.user.uid
       })
 
-      this.presentAlert('Success', 'You are now registered!')
-      this.router.navigate(['/user-home'])
+      this.presentAlert('Success', 'You are now registered. Please login!')
+      this.router.navigate(['/login'])
 
     } catch(error){
       console.dir(error)
