@@ -41,6 +41,7 @@ export class RegisterPage implements OnInit {
   async register(){
     const { username, password, cpassword } = this
     if(password != cpassword){
+      this.presentAlert("Error!", "Passwords don't match!")
       return console.error("Passwords do not match")
     }
     try{
