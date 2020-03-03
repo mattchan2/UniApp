@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'carer-home',
     loadChildren: () => import('./carer-home/carer-home.module').then( m => m.CarerHomePageModule)
   },
+  {
+    path: 'add-task',
+    loadChildren: () => import('./add-task/add-task.module').then( m => m.AddTaskPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-textarea placeholder="Enter Task Name" [(ngModel)]="task"></ion-textarea>
+  <ion-button (click)="createTask()">ADD</ion-button>
+</ion-content>
