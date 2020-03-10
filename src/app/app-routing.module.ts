@@ -20,8 +20,12 @@ const routes: Routes = [
     loadChildren: () => import('./carer-home/carer-home.module').then( m => m.CarerHomePageModule)
   },
   {
-    path: 'add-task',
-    loadChildren: () => import('./add-task/add-task.module').then( m => m.AddTaskPageModule)
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'user-tabs',
+    loadChildren: () => import('./user-tabs/user-tabs.module').then( m => m.UserTabsPageModule)
   },
 ];
 

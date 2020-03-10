@@ -27,6 +27,8 @@ export class AddTaskPage implements OnInit {
         task
       })
     })
+
+    this.task = ""
   }
 
 }

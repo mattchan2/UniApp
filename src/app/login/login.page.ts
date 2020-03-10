@@ -43,11 +43,11 @@ export class LoginPage implements OnInit {
     }
   }
 
-  userPath(){
-    this.path='/user-home'
+  async userPath(){
+    this.path = '/user-tabs'
   }
 
-  carerPath(){
-    this.path="/carer-home"
-  }
+  async carerPath(){
+    this.path = '/tabs'
+  } 
 }

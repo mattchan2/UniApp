@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Schedule</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="schedule">
+    <ion-list *ngFor="let task of ((userTasks | async)?.tasks)">
+      <ion-item>
+        <p>{{ task.task }}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

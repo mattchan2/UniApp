@@ -19,6 +19,35 @@ export class UserService {
   }
 
   getUID() {
-    return this.afAuth.auth.currentUser.uid
+    if(!this.user) {
+      if(this.afAuth.auth.currentUser){
+        const user = this.afAuth.auth.currentUser
+        this.setUser({
+          username: user.email.split('@')[0],
+          uid: user.uid
+        })
+        return user.uid
+      }else {
+        throw new Error("User not logged in!")
+      }
+      } else {
+      return this.user.uid
+    }
   }
 }
+
+// return this.afAuth.auth.currentUser.uid
+// if(!this.user) {
+//   if(this.afAuth.auth.currentUser){
+//     const user = this.afAuth.auth.currentUser
+//     this.setUser({
+//       username: user.email.split('@')[0],
+//       uid: user.uid
+//     })
+//     return user.uid
+//   }else {
+//     throw new Error("User not logged in!")
+//   }
+// } else {
+//   return this.user.uid
+// }
