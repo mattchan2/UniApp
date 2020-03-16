@@ -13,6 +13,7 @@ export class AddTaskPage implements OnInit {
 
   inputTask: string
   taskTime: string
+  inputTaskDetails: string
 
   constructor(
     public afStore: AngularFirestore,
@@ -34,11 +35,13 @@ export class AddTaskPage implements OnInit {
 
   createTask(){
     const task = this.inputTask
+    const details = this.inputTaskDetails
 
     if(this.taskTime == "morning"){
       this.afStore.doc(`users/${this.user.getUID()}`).update({
         morningTasks: firestore.FieldValue.arrayUnion({
-          task
+          task,
+          details
         })
       })
       this.presentAlert('Success', 'Task added!')
@@ -46,7 +49,8 @@ export class AddTaskPage implements OnInit {
     else if(this.taskTime == "afternoon"){
       this.afStore.doc(`users/${this.user.getUID()}`).update({
         afternoonTasks: firestore.FieldValue.arrayUnion({
-          task
+          task,
+          details
         })
       })  
       this.presentAlert('Success', 'Task added!')
@@ -54,7 +58,8 @@ export class AddTaskPage implements OnInit {
     else if(this.taskTime == "evening"){
       this.afStore.doc(`users/${this.user.getUID()}`).update({
         eveningTasks: firestore.FieldValue.arrayUnion({
-          task
+          task,
+          details
         })
       })
       this.presentAlert('Success', 'Task added!')
@@ -65,6 +70,7 @@ export class AddTaskPage implements OnInit {
 
     this.inputTask = ""
     this.taskTime = ""
+    this.inputTaskDetails = ""
   }
 
 }
