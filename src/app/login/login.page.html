@@ -8,7 +8,7 @@
 
   <ion-list>
 
-    <section>
+    <section class="userCarerButton">
       <ion-button fill="outline" (click)="userPath()">User</ion-button>
       <ion-button fill="outline" (click)="carerPath()">Carer</ion-button>
     </section>
@@ -26,8 +26,10 @@
     </section>
 
   </ion-list>
-  
-  <ion-button fill="solid" expand="block" color="dark" (click)="login()">Login</ion-button>
-  <ion-button fill="solid" expand="block" color="dark" href='/register'>New User? Sign Up Here!</ion-button>
+
+  <section class=loginButtons>
+    <ion-button fill="solid" expand="block" color="dark" (click)="login()">Login</ion-button>
+    <ion-button fill="solid" expand="block" color="dark" href='/register'>New User? Sign Up Here!</ion-button>
+  </section>
 
 </ion-content>

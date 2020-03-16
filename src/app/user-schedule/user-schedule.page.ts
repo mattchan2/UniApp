@@ -9,12 +9,17 @@ import { UserService } from '../user.service';
 })
 export class UserSchedulePage implements OnInit {
 
-  userTasks
+  userMorningTasks
+  userAfternoonTasks
+  userEveningTasks
 
   constructor(private afs: AngularFirestore, private user: UserService) { 
    const tasks = afs.doc(`users/${user.getUID()}`)
-   this.userTasks = tasks.valueChanges()
-    
+   this.userMorningTasks = tasks.valueChanges()
+
+   this.userAfternoonTasks = tasks.valueChanges()
+
+   this.userEveningTasks = tasks.valueChanges()
   }
 
   ngOnInit() {

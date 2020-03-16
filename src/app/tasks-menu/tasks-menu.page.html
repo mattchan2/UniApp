@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Task Type</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let genreList of taskGenre">
+      <ion-label>{{genreList.genre}}</ion-label>
+      <ion-button href={{genreList.genreLink}}>
+          <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
