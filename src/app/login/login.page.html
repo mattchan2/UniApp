@@ -6,12 +6,18 @@
 
 <ion-content padding>
 
-  <ion-list>
+  <section class="toggle">
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="selectedPath">
+      <ion-segment-button value="user">
+        <ion-label>User</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="carer">
+        <ion-label>Carer</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </section>
 
-    <section class="userCarerButton">
-      <ion-button fill="outline" (click)="userPath()">User</ion-button>
-      <ion-button fill="outline" (click)="carerPath()">Carer</ion-button>
-    </section>
+  <ion-list>
 
     <section>
       <ion-item>
@@ -29,7 +35,7 @@
 
   <section class=loginButtons>
     <ion-button fill="solid" expand="block" color="dark" (click)="login()">Login</ion-button>
-    <ion-button fill="solid" expand="block" color="dark" href='/register'>New User? Sign Up Here!</ion-button>
+    <ion-button fill="solid" expand="block" color="dark" href='/register'>Sign Up Here!</ion-button>
   </section>
 
 </ion-content>

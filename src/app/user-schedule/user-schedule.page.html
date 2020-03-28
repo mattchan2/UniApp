@@ -6,30 +6,33 @@
 
 <ion-content padding>
   <div id="schedule">
-    <ion-list-header>Morning</ion-list-header>
+    <ion-list-header class="listHeader">Morning</ion-list-header>
     <ion-list *ngFor="let task of ((userMorningTasks | async)?.morningTasks)">
-      <ion-item>
-        <h2>{{ task.task }}</h2>
+      <ion-item class="taskName">
+        <p>{{ task.task }}</p>
+        <p>{{task.pTask}}</p>
       </ion-item>
-      <ion-item>
+      <ion-item class="details" *ngIf="">
         <p>{{task.details}}</p>
       </ion-item>
     </ion-list>
-    <ion-list-header>Afternoon</ion-list-header>
+    <ion-list-header class="listHeader">Afternoon</ion-list-header>
     <ion-list *ngFor="let task of ((userAfternoonTasks | async)?.afternoonTasks)">
-      <ion-item>
-        <h2>{{ task.task }}</h2>
+      <ion-item class="taskName">
+        <p>{{ task.task }}<p>
+            <p>{{task.pTask}}</p>
       </ion-item>
-      <ion-item>
+      <ion-item class="details" *ngIf="">
         <p>{{task.details}}</p>
       </ion-item>
     </ion-list>
-    <ion-list-header>Evening</ion-list-header>
+    <ion-list-header class="listHeader">Evening</ion-list-header>
     <ion-list *ngFor="let task of ((userEveningTasks | async)?.eveningTasks)">
-      <ion-item>
-        <h2>{{ task.task }}</h2>
+      <ion-item class="taskName">
+        <p>{{ task.task }}<p>
+            <p>{{task.pTask}}</p>
       </ion-item>
-      <ion-item>
+      <ion-item class="details" *ngIf="">
         <p>{{task.details}}</p>
       </ion-item>
     </ion-list>

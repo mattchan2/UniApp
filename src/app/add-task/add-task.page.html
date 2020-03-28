@@ -5,10 +5,30 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-toolbar>
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="selectedTaskType" value="customTask">
+      <ion-segment-button value="task">
+        <ion-label>Task</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="customTask">
+        <ion-label>Custom Task</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
   <ion-list>
-    <ion-item>
+
+    <ion-item *ngIf="normalHide">
       <ion-label position="floating">Task</ion-label>
       <ion-input type="text" [(ngModel)]="inputTask"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="customHide">
+      <ion-label position="floating">Preset Task</ion-label>
+      <ion-select [(ngModel)]="inputPresetTask">
+        <ion-select-option *ngFor="let task of ((presetTasks | async)?.taskInfo)">
+          {{task.taskName}}
+        </ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-item>
@@ -26,5 +46,6 @@
     </ion-item>
 
     <ion-button expand="full" (click)="createTask()">Add</ion-button>
+
   </ion-list>
 </ion-content>

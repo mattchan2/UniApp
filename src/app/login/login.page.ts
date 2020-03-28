@@ -13,7 +13,8 @@ export class LoginPage implements OnInit {
 
   username: string = ""
   password: string = ""
-  path: string = "/user-home"
+  path: string = ""
+  selectedPath: string = ""
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -40,6 +41,15 @@ export class LoginPage implements OnInit {
       if(err.code == "auth/user-not-found"){
         console.log("User not found")
       }
+    }
+  }
+
+  async segmentChanged(){
+    if(this.selectedPath == "user"){
+      this.path = '/user-tabs'
+    }
+    else if(this.selectedPath == "carer"){
+      this.path = "/tabs"
     }
   }
 

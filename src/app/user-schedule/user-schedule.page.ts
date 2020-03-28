@@ -22,6 +22,10 @@ export class UserSchedulePage implements OnInit {
    this.userEveningTasks = tasks.valueChanges()
   }
 
+  //deleteTask(){
+  //  this.afs.doc(`users/${this.user.getUID()}/`).delete()
+  //}
+
   ngOnInit() {
   }
 

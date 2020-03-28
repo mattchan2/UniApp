@@ -1,5 +1,7 @@
 {
   "name": "AutIndApp",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
