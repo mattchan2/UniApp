@@ -1,17 +1,13 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Task Type</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content padding class="content">
+  <ion-card class="card" *ngFor="let genreList of taskGenre">
+    <img class="img" src={{genreList.img}} />
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let genreList of taskGenre">
-      <ion-label>{{genreList.genre}}</ion-label>
-      <ion-button href={{genreList.genreLink}}>
+      <ion-card-header>
+        <ion-card-title class="title">{{genreList.genre}}</ion-card-title>
+        <ion-button class="button" fill="clear" size="large" href={{genreList.genreLink}}>
           <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
+        </ion-button>
+      </ion-card-header>
 
-  </ion-list>
+  </ion-card>
 </ion-content>

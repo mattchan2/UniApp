@@ -4,7 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserTabsPage } from './user-tabs.page';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'user-schedule', pathMatch: 'full' },
   {
+    
     path: '',
     component: UserTabsPage,
     children: 
@@ -16,6 +18,10 @@ const routes: Routes = [
       {
         path: 'tasks-menu',
         loadChildren: () => import('../tasks-menu/tasks-menu.module').then( m => m.TasksMenuPageModule)
+      },
+      {
+        path: 'preset-tasks-morning',
+        loadChildren: () => import('../preset-tasks-morning/preset-tasks-morning.module').then( m => m.PresetTasksMorningPageModule)
       },
     ]
   }

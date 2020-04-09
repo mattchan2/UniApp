@@ -1,41 +1,42 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content padding class="content">
 
-<ion-content padding>
+  <ion-card class="card">
+    <ion-card-header class="title">
+      <ion-card-title>Sign in</ion-card-title>
+    </ion-card-header>
 
-  <section class="toggle">
-    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="selectedPath">
-      <ion-segment-button value="user">
-        <ion-label>User</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="carer">
-        <ion-label>Carer</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </section>
+    <ion-card-content>
+      <section class="toggle">
+        <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="selectedPath" class="segment" value="user">
+          <ion-segment-button value="user">
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="carer">
+            <ion-icon name="people-circle-outline"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+      </section>
+      <ion-list>
+        <section class="input">
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input type="text" [(ngModel)]="username"></ion-input>
+          </ion-item>
 
-  <ion-list>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+        </section>
+      </ion-list>
 
-    <section>
-      <ion-item>
-        <ion-label position="floating">Username</ion-label>
-        <ion-input type="text" [(ngModel)]="username"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" [(ngModel)]="password"></ion-input>
-      </ion-item>
-    </section>
-
-  </ion-list>
-
-  <section class=loginButtons>
-    <ion-button fill="solid" expand="block" color="dark" (click)="login()">Login</ion-button>
-    <ion-button fill="solid" expand="block" color="dark" href='/register'>Sign Up Here!</ion-button>
-  </section>
-
+      <section>
+        <ion-button class="loginButtons" color="dark" fill="outline" shape="round" type="submit" expand="block"
+          (click)="login()">Sign in</ion-button>
+        <ion-button fill="clear" expand="block" color="dark" href='/register'>
+          <p>New user? Sign up here!</p>
+        </ion-button>
+      </section>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

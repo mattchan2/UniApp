@@ -18,6 +18,8 @@ export class AddTaskPage implements OnInit {
   selectedTaskType: string;
   customHide: boolean;
   normalHide: boolean;
+  taskLink: string;
+  taskIdM: number;
 
   presetTasks;
 
@@ -28,6 +30,9 @@ export class AddTaskPage implements OnInit {
   ) {
     const task = afs.doc(`presetTasks/IMhK5CDr72B4C6MnFaQR`);
     this.presetTasks = task.valueChanges();
+    
+    this.taskLink = "/coat-slide";
+
   }
 
   ngOnInit() {
@@ -44,12 +49,12 @@ export class AddTaskPage implements OnInit {
     await alert.present();
   }
 
-  async segmentChanged(){
-    if(this.selectedTaskType == "task"){
+  async segmentChanged() {
+    if (this.selectedTaskType == "task") {
       this.normalHide = true
       this.customHide = false
     }
-    if(this.selectedTaskType == "customTask"){
+    if (this.selectedTaskType == "customTask") {
       this.customHide = true
       this.normalHide = false
     }
@@ -59,42 +64,76 @@ export class AddTaskPage implements OnInit {
     const task = this.inputTask;
     const details = this.inputTaskDetails;
     const pTask = this.inputPresetTask;
-
+    const pLink = this.taskLink;
+ 
     // this.afs.doc(`users/${this.user.getUID()}`).update({
     //   morningTasks: firestore.FieldValue.arrayUnion({
     //     pTask
     //   })
     // });
 
-    if (this.taskTime == "morning") {
-      this.afs.doc(`users/${this.user.getUID()}`).update({
-        morningTasks: firestore.FieldValue.arrayUnion({
-          task,
-          details,
-          pTask
-        })
-      });
-      this.presentAlert("Success", "Task added!");
-    } else if (this.taskTime == "afternoon") {
-      this.afs.doc(`users/${this.user.getUID()}`).update({
-        afternoonTasks: firestore.FieldValue.arrayUnion({
-          task,
-          details,
-          pTask
-        })
-      });
-      this.presentAlert("Success", "Task added!");
-    } else if (this.taskTime == "evening") {
-      this.afs.doc(`users/${this.user.getUID()}`).update({
-        eveningTasks: firestore.FieldValue.arrayUnion({
-          task,
-          details,
-          pTask
-        })
-      });
-      this.presentAlert("Success", "Task added!");
-    } else {
-      this.presentAlert("Error", "Please Select a Time of Day");
+    if (this.selectedTaskType == "task") {
+      if (this.taskTime == "morning") {
+        this.afs.doc(`users/${this.user.getUID()}`).update({
+          morningTasks: firestore.FieldValue.arrayUnion({
+            task,
+            details,
+          })
+        });
+        this.presentAlert("Success", "Task added!");
+      } else if (this.taskTime == "afternoon") {
+        this.afs.doc(`users/${this.user.getUID()}`).update({
+          afternoonTasks: firestore.FieldValue.arrayUnion({
+            task,
+            details,
+          })
+        });
+        this.presentAlert("Success", "Task added!");
+      } else if (this.taskTime == "evening") {
+        this.afs.doc(`users/${this.user.getUID()}`).update({
+          eveningTasks: firestore.FieldValue.arrayUnion({
+            task,
+            details,
+          })
+        });
+        this.presentAlert("Success", "Task added!");
+      } else {
+        this.presentAlert("Error", "Please Select a Time of Day");
+      }
+    }
+
+    if (this.selectedTaskType == "customTask") {
+      if (this.taskTime == "morning") {
+        this.afs.doc(`users/${this.user.getUID()}`).update({
+          morningTasks: firestore.FieldValue.arrayUnion({
+            pTask,
+            details,
+            pLink
+          })
+        });
+        this.presentAlert("Success", "Task added!");
+      } else if (this.taskTime == "afternoon") {
+        this.afs.doc(`users/${this.user.getUID()}`).update({
+          afternoonTasks: firestore.FieldValue.arrayUnion({
+            pTask,
+            details,
+            
+          })
+        });
+        this.presentAlert("Success", "Task added!");
+      } else if (this.taskTime == "evening") {
+        this.afs.doc(`users/${this.user.getUID()}`).update({
+          eveningTasks: firestore.FieldValue.arrayUnion({
+            pTask,
+            details,
+            
+          })
+        });
+        this.presentAlert("Success", "Task added!");
+      } else {
+        this.presentAlert("Error", "Please Select a Time of Day");
+      }
+
     }
 
     this.inputTask = "";

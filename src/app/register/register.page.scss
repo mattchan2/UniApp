@@ -1,3 +1,36 @@
-.loginButtons {
-    margin-top: 5%;
+.content{
+    --background: #33749c;
+}
+
+.icon{
+    position: relative;
+}
+
+.toggle{
+    position: relative;
+}
+
+.input{
+    position: relative;
+    padding-top: 5%;
+}
+
+.loginButtons{
+    position: relative;
+    margin: 10%;
+}
+
+.title{
+    position: relative;
+    padding: 10%;
+    text-align: center;
+}
+
+.text{
+    color: black;
+}
+
+.card{
+    position: relative;
+
 }

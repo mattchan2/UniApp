@@ -1,14 +1,18 @@
 .photo {
     width:  60%;
     height: 60%;
-    position: absolute;
+    margin: 20%;
+    position: relative;
 
 }
 
 .instruction{
     position: relative;
-    padding-top: 70%;
+    margin-top: 10%;
+    margin-bottom: 10%;
     text-align: center;
+    color: black;
+    font-size: large;
     
 }
 
@@ -17,8 +21,21 @@
     height: 75%;
 }
 
-.button{
-    position: absolute;
-    padding-top: 90%;
-    left: 30%;
+.returnButton{
+    position: relative;
+    margin: 10%;
+}
+
+.content{
+    --background: #33749c;
+}
+
+.card{
+    margin-top: 30%;
+    margin-top: 30%;
+}
+
+.backButton{
+    position: relative;
+    right: 30%;
 }

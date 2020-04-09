@@ -10,11 +10,11 @@ export class TasksMenuPage implements OnInit {
   constructor() { }
 
   //local storage for preset task menu items
-  taskGenre: any[] = [{id:1, genre:"Morning Activities" ,genreLink:"/preset-tasks-morning"},
-  {id:2, genre:"Evening Activities" ,genreLink:""},
-  {id:3, genre:"Work Activities" ,genreLink:""},
-  {id:4, genre:"Food Preparation" ,genreLink:""},
-  {id:5, genre:"Travel Activities" ,genreLink:""}]
+  taskGenre: any[] = [{id:1, genre:"Morning Activities" ,genreLink:"/user-tabs/preset-tasks-morning", img:"../../assets/img/morning.png"},
+  {id:2, genre:"Afternoon Activities" ,genreLink:"", img:"../../assets/img/afternoon.png"},
+  {id:3, genre:"Evening Activities" ,genreLink:"", img:"../../assets/img/night.png"},
+  {id:4, genre:"Food Preparation" ,genreLink:"", img:"../../assets/img/food.png"},
+  {id:5, genre:"Travel Activities" ,genreLink:"", img:"../../assets/img/travel.png"}]
 
   ngOnInit() {
   }

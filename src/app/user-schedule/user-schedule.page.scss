@@ -1,11 +1,50 @@
-.details{
-    font-size: x-small;
+.content{
+    --background: #33749c;
 }
 
-.listHeader{
-    font-size: large;
+.title{
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.toolbar{
+    --background: #33749c;
+    position: relative;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.mainTitle{
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.viewButton{
+    color: #33749c;
 }
 
 .taskName{
-    font-size: medium;
+    color: black;
+    font-size: large;
+}
+
+.details{
+    color: black;
+    font-size: large;
+    
+}
+
+.date{
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.lowerToolbar{
+    --background: #33749c;
+    position: relative;
+    margin-left: 5%;
+    margin-bottom: 5%;
 }
