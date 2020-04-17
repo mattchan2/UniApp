@@ -1,0 +1,71 @@
+<ion-content padding class="content">
+  <div id="schedule">
+    <ion-toolbar class="toolbar">
+      <ion-card-header class="mainTitle">Today's Schedule</ion-card-header>
+      <ion-datetime class="subtitle" displayFormat="DDDD D MMMM, YYYY" value='{{today | date}}'></ion-datetime>
+    </ion-toolbar>
+
+    <ion-card>
+      <ion-card-header class="title">Morning</ion-card-header>
+      <ion-card-content>
+        <ion-list *ngFor="let task of morningTaskList | async" routerLink="./update-task/{{task.id}}">
+          <ion-item lines="none" class="taskName">
+            <p>{{ task.taskName }}</p>
+            <ion-button class="viewButton" slot="end" fill="outline" (click)="showDetails(task)" color="#33749c">View
+            </ion-button>
+            <ion-button class="delButton" slot="end" fill="outline" (click)="deleteTask(task.id, task.taskTime)"
+              color="#33749c">Del
+            </ion-button>
+
+          </ion-item>
+          <ion-item class="details" *ngIf="task.hideDetails" lines="none">
+            <p>{{task.taskDetails}}</p>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header class="title">Afternoon</ion-card-header>
+      <ion-card-content>
+        <ion-list *ngFor="let task of afternoonTaskList | async" routerLink="./update-task/{{task.id}}">
+          <ion-item lines="none" class="taskName">
+            <p>{{ task.taskName }}<p>
+                <ion-button class="viewButton" slot="end" (click)="showDetails(task)" color="#33749c" fill="outline">
+                  View</ion-button>
+                <ion-button class="delButton" slot="end" fill="outline" (click)="deleteTask(task.id, task.taskTime)"
+                  color="#33749c">Del
+                </ion-button>
+
+          </ion-item>
+          <ion-item class="details" *ngIf="task.hideDetails">
+            <p>{{task.taskDetails}}</p>
+            <ion-button class="linkButton" slot="end" href={{task.taskLink}} color="#33749c" fill="outline">Go
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header class="title">Evening</ion-card-header>
+      <ion-card-content>
+        <ion-list *ngFor="let task of eveningTaskList | async" routerLink="./update-task/{{task.id}}">
+          <ion-item lines="none" class="taskName">
+            <p>{{ task.taskName }}<p>
+                <ion-button class="viewButton" slot="end" (click)="showDetails(task)" color="#33749c" fill="outline">
+                  View</ion-button>
+                <ion-button class="delButton" slot="end" fill="outline" (click)="deleteTask(task.id, task.taskTime)"
+                  color="#33749c">Del
+                </ion-button>
+
+          </ion-item>
+          <ion-item class="details" *ngIf="task.hideDetails">
+            <p>{{task.taskDetails}}</p>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

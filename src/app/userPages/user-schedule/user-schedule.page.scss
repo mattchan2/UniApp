@@ -12,13 +12,22 @@
     --background: #33749c;
     position: relative;
     margin-top: 5%;
-    margin-left: 5%;
+    text-align: center;
+
 }
 
 .mainTitle{
     color: white;
     font-size: xx-large;
     font-weight: bold;
+    text-align: center;
+}
+
+.subtitle{
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
 }
 
 .viewButton{
@@ -40,11 +49,4 @@
     color: black;
     font-size: x-large;
     font-weight: bold;
-}
-
-.lowerToolbar{
-    --background: #33749c;
-    position: relative;
-    margin-left: 5%;
-    margin-bottom: 5%;
 }

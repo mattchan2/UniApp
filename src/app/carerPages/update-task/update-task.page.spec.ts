@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ExpandableComponent } from './expandable.component';
+import { UpdateTaskPage } from './update-task.page';
 
-describe('ExpandableComponent', () => {
-  let component: ExpandableComponent;
-  let fixture: ComponentFixture<ExpandableComponent>;
+describe('UpdateTaskPage', () => {
+  let component: UpdateTaskPage;
+  let fixture: ComponentFixture<UpdateTaskPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExpandableComponent ],
+      declarations: [ UpdateTaskPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ExpandableComponent);
+    fixture = TestBed.createComponent(UpdateTaskPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

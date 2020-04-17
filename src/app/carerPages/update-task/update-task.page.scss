@@ -1,3 +1,7 @@
+.hidden{
+    display: none;
+}
+
 .content{
     --background: #33749c;
 }
@@ -8,21 +12,13 @@
     padding: 10%;
 }
 
-.addButton{
+.updateButton{
     position: relative;
     margin: 10%;
 }
 
 .input{
     
-}
-
-.segment{
-    
-}
-
-.toolbar{
-    padding-top: 10%;
 }
 
 .card{

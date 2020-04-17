@@ -6,32 +6,32 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./otherPages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./otherPages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'tabs',
-    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+    loadChildren: () => import('./carerPages/tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
     path: 'user-tabs',
-    loadChildren: () => import('./user-tabs/user-tabs.module').then( m => m.UserTabsPageModule),
+    loadChildren: () => import('./userPages/user-tabs/user-tabs.module').then( m => m.UserTabsPageModule),
     //canActivate: [AuthService]
   },
   {
     path: 'preset-tasks-morning',
-    loadChildren: () => import('./preset-tasks-morning/preset-tasks-morning.module').then( m => m.PresetTasksMorningPageModule)
+    loadChildren: () => import('./userPages/preset-tasks-morning/preset-tasks-morning.module').then( m => m.PresetTasksMorningPageModule)
   },
   {
     path: 'tasks-menu',
-    loadChildren: () => import('./tasks-menu/tasks-menu.module').then( m => m.TasksMenuPageModule)
+    loadChildren: () => import('./userPages/tasks-menu/tasks-menu.module').then( m => m.TasksMenuPageModule)
   },
   {
     path: 'coat-slide',
-    loadChildren: () => import('./coat-slide/coat-slide.module').then( m => m.CoatSlidePageModule)
+    loadChildren: () => import('./slides/coat-slide/coat-slide.module').then( m => m.CoatSlidePageModule)
   },
 ];
 

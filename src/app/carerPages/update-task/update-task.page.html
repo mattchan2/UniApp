@@ -1,0 +1,44 @@
+<ion-content class="content">
+  <ion-card class="card">
+    <ion-card-header class="title">
+        <ion-card-title>Edit</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list class="input">
+        <ion-item>
+          <ion-label position="floating">Task Name</ion-label>
+          <ion-input [(ngModel)]="inputTaskName" type="text"
+            value="{{ (taskMorning | async)?.taskName }}{{ (taskAfternoon | async)?.taskName }}{{ (taskEvening | async)?.taskName }}">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Details</ion-label>
+          <ion-input [(ngModel)]="inputTaskDetails" type="text"
+            value="{{ (taskMorning | async)?.taskDetails }}{{ (taskAfternoon | async)?.taskDetails }}{{ (taskEvening | async)?.taskDetails }}">
+          </ion-input>
+        </ion-item>
+
+        <ion-item class="hidden">
+          <ion-input [(ngModel)]="inputOldTaskTime" type="text"
+            value="{{ (taskMorning | async)?.taskTime }}{{ (taskAfternoon | async)?.taskTime }}{{ (taskEvening | async)?.taskTime }}">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Time of Day</ion-label>
+          <ion-select [(ngModel)]="inputNewTaskTime"
+            value="{{ (taskMorning | async)?.taskTime }}{{ (taskAfternoon | async)?.taskTime }}{{ (taskEvening | async)?.taskTime }}">
+            <ion-select-option value="morning">Morning</ion-select-option>
+            <ion-select-option value="afternoon">Afternoon</ion-select-option>
+            <ion-select-option value="evening">Evening</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-button class="updateButton" color="dark" fill="outline" shape="round" expand="block" type="submit" (click)="updateTask()">
+          Update
+        </ion-button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

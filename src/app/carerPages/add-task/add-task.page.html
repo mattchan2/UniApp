@@ -20,12 +20,12 @@
 
         <ion-item *ngIf="normalHide">
           <ion-label position="floating">Custom Task</ion-label>
-          <ion-input type="text" [(ngModel)]="inputTask"></ion-input>
+          <ion-input type="text" [(ngModel)]="inputTaskName"></ion-input>
         </ion-item>
 
         <ion-item *ngIf="customHide">
           <ion-label position="floating">Preset Task</ion-label>
-          <ion-select [(ngModel)]="inputPresetTask">
+          <ion-select [(ngModel)]="inputTaskName" >
             <ion-select-option *ngFor="let task of ((presetTasks | async)?.taskInfo)">
               {{task.taskName}}
             </ion-select-option>
@@ -39,14 +39,14 @@
 
         <ion-item>
           <ion-label position="floating">Time of Day</ion-label>
-          <ion-select [(ngModel)]="taskTime">
+          <ion-select [(ngModel)]="inputTaskTime">
             <ion-select-option value="morning">Morning</ion-select-option>
             <ion-select-option value="afternoon">Afternoon</ion-select-option>
             <ion-select-option value="evening">Evening</ion-select-option>
           </ion-select>
         </ion-item>
 
-        <ion-button class="addButton" color="dark" fill="outline" shape="round" type="submit" expand="block" (click)="createTask()">Add</ion-button>
+        <ion-button class="addButton" color="dark" fill="outline" shape="round" type="submit" expand="block" (click)="createTaskNew()">Add</ion-button>
 
       </ion-list>
     </ion-card-content>

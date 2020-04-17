@@ -16,8 +16,9 @@ const routes: Routes = [
       },
       {
         path: 'user-schedule',
-        loadChildren: () => import('../user-schedule/user-schedule.module').then( m => m.UserSchedulePageModule)
-      }
+        loadChildren: () => import('../../userPages/user-schedule/user-schedule.module').then( m => m.UserSchedulePageModule)
+      },
+      
     ]
   }
 ];
