@@ -3,8 +3,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { UserService } from '../../services/user.service';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 
 @Component({
   selector: 'app-register',
@@ -17,12 +18,19 @@ export class RegisterPage implements OnInit {
   password: string = ""
   cpassword: string = ""
 
+  options: NativeTransitionOptions = {
+    direction: 'left',
+    duration: 500,
+  }
+
   constructor(
     public afAuth: AngularFireAuth,
     public afStore: AngularFirestore,
     public user: UserService,
     public alertController: AlertController,
-    public router: Router
+    public router: Router,
+    private nativePageTransitions: NativePageTransitions,
+    private navCtrl: NavController
     ) { }
 
   ngOnInit() {
@@ -62,6 +70,11 @@ export class RegisterPage implements OnInit {
     } catch(error){
       console.dir(error)
     }
+  }
+
+  async loginLink(){
+    //this.nativePageTransitions.slide(this.options);
+    this.navCtrl.navigateBack('login');
   }
   
 }

@@ -1,34 +1,40 @@
 <ion-content padding class="content">
-  <ion-card class="card">
-    <ion-card-header class="title">
-      <ion-card-title>Sign up</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <section class="input">
-        <ion-list>
-          <ion-item>
-            <ion-label position="floating">Username</ion-label>
-            <ion-input type="text" [(ngModel)]="username"></ion-input>
-          </ion-item>
+  <ion-grid fixed="true" class="ion-align-items-center">
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <ion-card class="card">
+          <ion-card-header class="title">
+            <ion-card-title>Sign up</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <section class="input">
+              <ion-list>
+                <ion-item>
+                  <ion-label position="floating">Username</ion-label>
+                  <ion-input type="text" [(ngModel)]="username"></ion-input>
+                </ion-item>
 
-          <ion-item>
-            <ion-label position="floating">Password</ion-label>
-            <ion-input type="password" [(ngModel)]="password"></ion-input>
-          </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Password</ion-label>
+                  <ion-input type="password" [(ngModel)]="password"></ion-input>
+                </ion-item>
 
-          <ion-item>
-            <ion-label position="floating">Confirm Password</ion-label>
-            <ion-input type="password" [(ngModel)]="cpassword"></ion-input>
-          </ion-item>
-        </ion-list>
-      </section>
-      <section>
-        <ion-button class="loginButtons" fill="outline" expand="block" color="dark" (click)="register()">Sign Up
-        </ion-button>
-        <ion-button fill="clear" expand="block" color="dark" href='/login'>
-          <p>Already have an account? Sign in here!</p>
-        </ion-button>
-      </section>
-    </ion-card-content>
-  </ion-card>
+                <ion-item>
+                  <ion-label position="floating">Confirm Password</ion-label>
+                  <ion-input type="password" [(ngModel)]="cpassword"></ion-input>
+                </ion-item>
+              </ion-list>
+            </section>
+            <section>
+              <ion-button class="loginButtons" fill="outline" expand="block" color="dark" (click)="register()">Sign Up
+              </ion-button>
+              <ion-button fill="clear" expand="block" color="dark" (click)="loginLink()">
+                <p>Already have an account? Sign in here!</p>
+              </ion-button>
+            </section>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

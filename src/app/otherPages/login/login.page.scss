@@ -22,7 +22,7 @@
 
 .segment{
     position: relative;
-    margin-top: 20%;
+    margin-top: 10%;
     width: 60%;
     left: 20%;
 }
@@ -39,5 +39,11 @@
 
 .card{
     position: relative;
-    margin: 5%;
 }
+
+.ion-align-items-center{
+    align-items: center;
+    vertical-align: middle;
+    height: 100%;
+}
+

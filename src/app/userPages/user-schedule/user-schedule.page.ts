@@ -22,10 +22,10 @@ export class UserSchedulePage implements OnInit {
   public afternoonTaskList;
   public eveningTaskList;
 
-  userMorningTasks
-  userAfternoonTasks
-  userEveningTasks
-  hideDetails: boolean
+  userMorningTasks;
+  userAfternoonTasks;
+  userEveningTasks;
+  hideDetails: boolean;
 
   today = Date.now();
 
@@ -43,10 +43,10 @@ export class UserSchedulePage implements OnInit {
 
   showDetails(task) {
     if (task.hideDetails == true) {
-      task.hideDetails = false
+      task.hideDetails = false;
     }
     else {
-      task.hideDetails = true
+      task.hideDetails = true;
     }
   }
 
@@ -78,7 +78,7 @@ export class UserSchedulePage implements OnInit {
   }
 
   ngOnInit() {
-    this.hideDetails = false
+    this.hideDetails = false;
 
     //const taskId: string = this.route.snapshot.paramMap.get('id');
     //this.task = this.firestoreService.getTaskDetail(taskId).valueChanges();

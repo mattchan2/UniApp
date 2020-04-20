@@ -15,6 +15,8 @@ import { UserService } from './services/user.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
+import { NativePageTransitions } from '@ionic-native/native-page-transitions/ngx'
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -30,7 +32,8 @@ import { environment } from '../environments/environment';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    UserService
+    UserService,
+    NativePageTransitions,
   ],
   bootstrap: [AppComponent]
 })

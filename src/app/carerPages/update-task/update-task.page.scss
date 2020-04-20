@@ -9,7 +9,7 @@
 .title{
     position: relative;
     text-align: center;
-    padding: 10%;
+    margin-bottom: 5%;
 }
 
 .updateButton{
@@ -22,5 +22,11 @@
 }
 
 .card{
-    margin: 5%;
+
+}
+
+.ion-align-items-center{
+    align-items: center;
+    vertical-align: middle;
+    height: 100%;
 }

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Task } from '../../services/task.interface';
 import { FirestoreService } from '../../services/data/firestore.service';
 import { Observable } from 'rxjs';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-update-task',
@@ -23,7 +23,9 @@ export class UpdateTaskPage implements OnInit {
     private firestoreService: FirestoreService,
     private route: ActivatedRoute,
     private router: Router,
-    public loadingCtrl: LoadingController) { }
+    public loadingCtrl: LoadingController,
+    public navCtrl: NavController,
+    public alertController: AlertController) { }
 
   ngOnInit() {
     const taskId: string = this.route.snapshot.paramMap.get('id');
@@ -32,6 +34,16 @@ export class UpdateTaskPage implements OnInit {
     this.taskAfternoon = this.firestoreService.getTaskDetailAfternoon(taskId).valueChanges();
     this.taskEvening = this.firestoreService.getTaskDetailEvening(taskId).valueChanges();
 
+  }
+
+  async presentAlert(title: string, content: string) {
+    const alert = await this.alertController.create({
+      header: title,
+      message: content,
+      buttons: ["OK"]
+    });
+
+    await alert.present();
   }
 
   async updateTask() {
@@ -49,7 +61,8 @@ export class UpdateTaskPage implements OnInit {
       .then(
         () => {
           loading.dismiss().then(() => {
-            this.router.navigateByUrl('/user-tabs/user-schedule');
+            this.presentAlert("Success", "Task updated!");
+            this.navCtrl.navigateBack('/tabs/carer-schedule');
           });
         },
         error => {
@@ -59,5 +72,38 @@ export class UpdateTaskPage implements OnInit {
   
     return await loading.present();
     
+  }
+
+  async backLink(){
+    this.navCtrl.navigateBack('/tabs/carer-schedule')
+  }
+
+  async deleteTask() {
+    const taskId: string = this.route.snapshot.paramMap.get('id');
+    const oldTaskTime = this.inputOldTaskTime;
+
+    console.log("Item deleted: ", taskId)
+    const alert = await this.alertController.create({
+      message: 'Are you sure you want to delete the task?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: blah => {
+            console.log('Confirm Cancel: blah');
+          },
+        },
+        {
+          text: 'Okay',
+          handler: () => {
+            this.firestoreService.deleteTask(taskId, oldTaskTime).then(() => {
+              this.navCtrl.navigateBack('/tabs/carer-schedule');
+            });
+          },
+        },
+      ],
+    });
+  
+    await alert.present();
   }
 }

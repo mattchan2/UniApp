@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'user-schedule', pathMatch: 'full' },
+  { path: '', redirectTo: 'carer-schedule', pathMatch: 'full' },
   {
     path: '',
     component: TabsPage,
@@ -15,8 +15,8 @@ const routes: Routes = [
         loadChildren: () => import('../add-task/add-task.module').then( m => m.AddTaskPageModule)
       },
       {
-        path: 'user-schedule',
-        loadChildren: () => import('../../userPages/user-schedule/user-schedule.module').then( m => m.UserSchedulePageModule)
+        path: 'carer-schedule',
+        loadChildren: () => import('../../carerPages/carer-schedule/carer-schedule.module').then( m => m.CarerSchedulePageModule)
       },
       
     ]

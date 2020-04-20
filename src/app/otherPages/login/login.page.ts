@@ -3,6 +3,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -16,10 +18,17 @@ export class LoginPage implements OnInit {
   path: string = ""
   selectedPath: string = ""
 
+  options: NativeTransitionOptions = {
+    direction: 'right',
+    duration: 500,
+  }
+
   constructor(
     public afAuth: AngularFireAuth,
     public user:UserService,
-    public router:Router
+    public router:Router,
+    private nativePageTransitions: NativePageTransitions,
+    private navCtrl: NavController
     ) { }
 
   ngOnInit() {
@@ -27,6 +36,7 @@ export class LoginPage implements OnInit {
 
   async login(){
     const { username, password } = this
+
     try{
       const res = await this.afAuth.auth.signInWithEmailAndPassword(username + '@codedamn.com', password) //this isn't the best way of handling usernames
       if(res.user){
@@ -34,6 +44,7 @@ export class LoginPage implements OnInit {
           username,
           uid: res.user.uid
         })
+        this.nativePageTransitions.slide(this.options);
         this.router.navigate([this.path])
       }
     } catch(err){
@@ -42,6 +53,11 @@ export class LoginPage implements OnInit {
         console.log("User not found")
       }
     }
+  }
+
+  async registerLink(){
+   // this.nativePageTransitions.slide(this.options);
+    this.navCtrl.navigateForward('register');
   }
 
   async segmentChanged(){
