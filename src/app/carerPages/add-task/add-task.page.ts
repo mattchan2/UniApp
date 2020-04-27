@@ -12,9 +12,11 @@ import { FirestoreService } from '../../services/data/firestore.service';
 })
 export class AddTaskPage implements OnInit {
   inputTaskName: string;
-  inputTaskTime: string;
   inputTaskDetails: string;
+  inputStartTime: any;
+  inputEndTime: any;
   inputPresetTask: string;
+
 
   selectedTaskType: string;
   customHide: boolean;
@@ -64,17 +66,19 @@ export class AddTaskPage implements OnInit {
 
     const taskName = this.inputTaskName;
     const taskDetails = this.inputTaskDetails;
-    const taskTime = this.inputTaskTime;
-  
+    const startTime = new Date (this.inputStartTime);
+    const endTime = new Date (this.inputEndTime);
+
     this.firestoreService
-      .createTask(taskName, taskDetails, taskTime)
+      .createTask(taskName, taskDetails, startTime, endTime)
       .then(
         () => {
           loading.dismiss().then(() => {
             this.presentAlert("Success", "Task added!");
             this.inputTaskName = "";
-            this.inputTaskTime = "";
             this.inputTaskDetails = "";
+            this.inputStartTime = "";
+            this.inputEndTime = "";
           });
         },
         error => {

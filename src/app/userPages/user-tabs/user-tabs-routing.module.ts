@@ -23,6 +23,14 @@ const routes: Routes = [
         path: 'preset-tasks-morning',
         loadChildren: () => import('../preset-tasks-morning/preset-tasks-morning.module').then( m => m.PresetTasksMorningPageModule)
       },
+      {
+        path: 'coat-slide',
+        loadChildren: () => import('../../slides/coat-slide/coat-slide.module').then( m => m.CoatSlidePageModule)
+      },
+      {
+        path: 'user-settings',
+        loadChildren: () => import('../user-settings/user-settings.module').then( m => m.UserSettingsPageModule)
+      },
     ]
   }
 ];

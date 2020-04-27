@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { UpdateTaskPageRoutingModule } from './update-task-routing.module';
+import { CarerSettingsPageRoutingModule } from './carer-settings-routing.module';
 
-import { UpdateTaskPage } from './update-task.page';
+import { CarerSettingsPage } from './carer-settings.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UpdateTaskPageRoutingModule
+    CarerSettingsPageRoutingModule
   ],
-  declarations: [UpdateTaskPage]
+  declarations: [CarerSettingsPage]
 })
-export class UpdateTaskPageModule {}
+export class CarerSettingsPageModule {}

@@ -24,7 +24,7 @@
 
               <ion-item *ngIf="normalHide">
                 <ion-label position="floating">Custom Task</ion-label>
-                <ion-input type="text" [(ngModel)]="inputTaskName"></ion-input>
+                <ion-input autocapitalize="words" type="text" [(ngModel)]="inputTaskName"></ion-input>
               </ion-item>
 
               <ion-item *ngIf="customHide">
@@ -38,16 +38,19 @@
 
               <ion-item>
                 <ion-label position="floating">Details</ion-label>
-                <ion-input type="text" [(ngModel)]="inputTaskDetails"></ion-input>
+                <ion-input autocapitalize="words" type="text" [(ngModel)]="inputTaskDetails"></ion-input>
               </ion-item>
 
               <ion-item>
-                <ion-label position="floating">Time of Day</ion-label>
-                <ion-select [(ngModel)]="inputTaskTime">
-                  <ion-select-option value="morning">Morning</ion-select-option>
-                  <ion-select-option value="afternoon">Afternoon</ion-select-option>
-                  <ion-select-option value="evening">Evening</ion-select-option>
-                </ion-select>
+                <ion-label position="floating">Start Time</ion-label>
+                <ion-datetime [(ngModel)]="inputStartTime" displayFormat="DDD D MMM hh:mm A" minuteValues="0,15,30,45">
+                </ion-datetime>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating">End Time</ion-label>
+                <ion-datetime [(ngModel)]="inputEndTime" displayFormat="DDD D MMM hh:mm A" minuteValues="0,15,30,45">
+                </ion-datetime>
               </ion-item>
 
               <ion-button class="addButton" color="dark" fill="outline" shape="round" type="submit" expand="block"

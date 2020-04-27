@@ -8,13 +8,19 @@
 }
 
 .title{
-    font-size: large;
+    font-size: x-large;
     color: black;
+    text-align: left;
+    float: left;
+
+}
+.button{
+    color: black;
+    float: right;   
 }
 
-.button{
-    position: relative;
-    left: 50%;
+.backButton{
+    --color: white;
 }
 
 .content{
@@ -23,4 +29,23 @@
 
 .card{
 
+}
+
+.icon{
+    color: white;
+}
+
+.toolbar{
+    --background: #33749c;
+    position: relative;
+    margin-top: 5%;
+    text-align: center;
+
+}
+
+.mainTitle{
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
 }

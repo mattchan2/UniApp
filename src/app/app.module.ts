@@ -15,6 +15,8 @@ import { UserService } from './services/user.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+
 import { NativePageTransitions } from '@ionic-native/native-page-transitions/ngx'
 
 @NgModule({
@@ -27,6 +29,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions/ngx
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    ScheduleModule
   ],
   providers: [
     StatusBar,

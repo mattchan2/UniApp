@@ -8,12 +8,15 @@ import { UserSchedulePageRoutingModule } from './user-schedule-routing.module';
 
 import { UserSchedulePage } from './user-schedule.page';
 
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UserSchedulePageRoutingModule
+    UserSchedulePageRoutingModule,
+    ScheduleModule
   ],
   declarations: [UserSchedulePage]
 })

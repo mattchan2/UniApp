@@ -8,10 +8,7 @@ const routes: Routes = [
     path: '',
     component: UserSchedulePage
   },
-  {
-    path: 'update-task/:id',
-    loadChildren: () => import('../../carerPages/update-task/update-task.module').then( m => m.UpdateTaskPageModule)
-  },
+  
 ];
 
 @NgModule({

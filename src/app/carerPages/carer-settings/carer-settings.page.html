@@ -1,0 +1,22 @@
+<ion-content padding class="content">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card class="card" *ngFor="let setting of Settings">
+            <ion-card-content>
+              <ion-row>
+                <ion-col>
+                  <ion-card-title class="title">{{setting.name}}</ion-card-title>
+                </ion-col>
+                <ion-col>
+                  <ion-button class="button" fill="clear" size="large" (click)="settingsLink(setting.link)">
+                    <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

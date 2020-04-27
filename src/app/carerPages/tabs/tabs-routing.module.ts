@@ -18,7 +18,14 @@ const routes: Routes = [
         path: 'carer-schedule',
         loadChildren: () => import('../../carerPages/carer-schedule/carer-schedule.module').then( m => m.CarerSchedulePageModule)
       },
-      
+      {
+        path: 'carer-settings',
+        loadChildren: () => import('../carer-settings/carer-settings.module').then( m => m.CarerSettingsPageModule)
+      },
+      {
+        path: 'overview',
+        loadChildren: () => import('../overview/overview.module').then( m => m.OverviewPageModule)
+      },
     ]
   }
 ];

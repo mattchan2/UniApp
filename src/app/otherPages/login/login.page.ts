@@ -18,11 +18,6 @@ export class LoginPage implements OnInit {
   path: string = ""
   selectedPath: string = ""
 
-  options: NativeTransitionOptions = {
-    direction: 'right',
-    duration: 500,
-  }
-
   constructor(
     public afAuth: AngularFireAuth,
     public user:UserService,
@@ -44,8 +39,9 @@ export class LoginPage implements OnInit {
           username,
           uid: res.user.uid
         })
-        this.nativePageTransitions.slide(this.options);
-        this.router.navigate([this.path])
+        this.username = "";
+        this.password = "";
+        this.navCtrl.navigateForward([this.path]);
       }
     } catch(err){
       console.dir(err)

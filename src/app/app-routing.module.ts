@@ -29,10 +29,7 @@ const routes: Routes = [
     path: 'tasks-menu',
     loadChildren: () => import('./userPages/tasks-menu/tasks-menu.module').then( m => m.TasksMenuPageModule)
   },
-  {
-    path: 'coat-slide',
-    loadChildren: () => import('./slides/coat-slide/coat-slide.module').then( m => m.CoatSlidePageModule)
-  },
+  
 ];
 
 @NgModule({

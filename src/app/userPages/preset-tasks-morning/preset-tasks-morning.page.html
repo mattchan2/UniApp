@@ -1,22 +1,38 @@
-<ion-header>
-  <ion-toolbar class="toolbar">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref='/user-tabs/tasks-menu' color="dark"></ion-back-button>
-      <!--Native back button-->
-    </ion-buttons>
-    <ion-title class="title">Morning Activities</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="content">
+  <ion-grid>
 
-<ion-content padding class="content">
+    <ion-row class="ion-align-items-start">
+      <ion-col>
+        <ion-toolbar class="toolbar">
+          <ion-card-header class="mainTitle" slot="start">Morning</ion-card-header>
+          <ion-button class="backButton" fill="clear" (click)="menuLink()" size="large" color="white" slot="end">
+              <ion-icon class="icon" name="arrow-back-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
 
-  <ion-card class="card" *ngFor="let morningTasks of presetTasksMorning">
-    <ion-card-header class="itemLabel">{{morningTasks.title}}
-      <ion-button class="button" href={{morningTasks.pageLink}} fill="clear" color="dark" size="large">
-        <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-      </ion-button>
-    </ion-card-header>
 
-  </ion-card>
+    <ion-row>
+      <ion-col>
+        <ion-card class="card" *ngFor="let morningTasks of presetTasksMorning">
+          <ion-card-content>
+            <ion-row>
+              <ion-col>
+                <ion-card-title class="title">{{morningTasks.title}}</ion-card-title>
+              </ion-col>
+              <ion-col>
+                <ion-button class="button" fill="clear" size="large" color="dark"
+                  (click)="taskLink(morningTasks.pageLink)">
+                  <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
+
+  </ion-grid>
 </ion-content>

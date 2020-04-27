@@ -8,26 +8,32 @@
     font-weight: bold;
 }
 
+.viewEditButton{
+    color: white;
+}
+
 .toolbar{
     --background: #33749c;
     position: relative;
     margin-top: 5%;
-    text-align: center;
 
+}
+
+.edit{
+    height: 50%;
 }
 
 .mainTitle{
     color: white;
     font-size: xx-large;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 
 .subtitle{
     color: white;
-    font-size: x-large;
-    font-weight: bold;
-    text-align: center;
+    font-size: large;
+    text-align: right;
 }
 
 .viewButton{
@@ -49,4 +55,21 @@
     color: black;
     font-size: x-large;
     font-weight: bold;
+}
+
+.ion-align-items-center{
+    align-items: center;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.ion-align-items-start{
+    align-items: center;
+    vertical-align: top;
+    height: 100%;
+}
+
+.card{
+    position: relative;
+    padding-bottom: 5%;
 }

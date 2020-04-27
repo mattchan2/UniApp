@@ -1,0 +1,64 @@
+.card {
+    position: relative;
+}
+
+.title {
+    margin: 5%;
+    text-align: center;
+    color: black;
+}
+
+.subtitle {
+    text-align: center;
+    color: black;
+
+}
+
+
+
+.pieChart {
+    height: 75%;
+    width: 75%;
+
+    align-items: center;
+    position: relative;
+    display: block;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.ion-align-items-center {
+    align-items: center;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.content {
+    --background: #33749c;
+}
+
+.red {
+    --color: white;
+    --background: red;
+}
+
+.green {
+    --color: white;
+    --background: green;
+}
+
+.yellow {
+    --color: white;
+    --background: yellow;
+}
+
+.icon {
+    --color: white;
+}
+
+.chip {
+    margin: 10%;
+}

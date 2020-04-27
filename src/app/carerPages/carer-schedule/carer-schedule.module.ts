@@ -8,12 +8,15 @@ import { CarerSchedulePageRoutingModule } from './carer-schedule-routing.module'
 
 import { CarerSchedulePage } from './carer-schedule.page';
 
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CarerSchedulePageRoutingModule
+    CarerSchedulePageRoutingModule,
+    ScheduleModule
   ],
   declarations: [CarerSchedulePage]
 })
