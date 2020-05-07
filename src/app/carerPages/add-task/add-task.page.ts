@@ -16,13 +16,18 @@ export class AddTaskPage implements OnInit {
   inputStartTime: any;
   inputEndTime: any;
   inputPresetTask: string;
-
+  inputImageName: string;
 
   selectedTaskType: string;
   customHide: boolean;
   normalHide: boolean;
 
   presetTasks;
+
+  imgList: any[] = [
+    {imgLink: "../../assets/img/breakfast.jpg" },
+
+]
 
   constructor(
     public afs: AngularFirestore,

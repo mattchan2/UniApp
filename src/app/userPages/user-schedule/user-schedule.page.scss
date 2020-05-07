@@ -60,3 +60,45 @@
 .viewEditButton{
     color: white;
 }
+
+.img{
+    height: 50px;
+    width: 75px;
+}
+
+.img2{
+    height: 100px;
+    width: 100px;
+    
+}
+
+.img3{
+    height: 300px;
+    width: 300px;
+    margin-top: 10%;
+    margin-left: 35%;
+}
+
+.subject{
+    color: black;
+    font-size: large;
+}
+
+.time{
+    color: black;
+    font-size: large;
+}
+
+.description{
+    color: black;
+    font-size: large;
+}
+
+.backButton{
+    --color: black;
+    float: right;
+}
+
+.icon{
+    --color: black;
+}

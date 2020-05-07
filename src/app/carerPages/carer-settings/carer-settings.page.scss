@@ -5,6 +5,10 @@
     --background: #33749c;
 }
 
+.toolbar{
+    --background: #33749c;
+}
+
 .title{
     font-size: x-large;
     color: black;
@@ -20,4 +24,11 @@
 
 .img{
     position: absolute;
+}
+
+.mainTitle{
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
 }

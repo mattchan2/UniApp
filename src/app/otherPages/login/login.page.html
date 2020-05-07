@@ -9,12 +9,14 @@
           </ion-card-header>
 
           <ion-card-content>
-            <section class="toggle">
+            <section>
               <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="selectedPath" class="segment" value="user">
                 <ion-segment-button value="user">
+                  Use
                   <ion-icon name="person-circle-outline"></ion-icon>
                 </ion-segment-button>
                 <ion-segment-button value="carer">
+                  Plan
                   <ion-icon name="people-circle-outline"></ion-icon>
                 </ion-segment-button>
               </ion-segment>

@@ -1,0 +1,41 @@
+<ion-content class="content">
+    <ion-grid>
+  
+      <ion-row class="ion-align-items-start">
+        <ion-col>
+          <ion-toolbar class="toolbar">
+            <ion-card-header class="mainTitle" slot="start">Evening</ion-card-header>
+            <ion-button class="backButton" fill="clear" (click)="menuLink()" size="large" color="white" slot="end">
+                <ion-icon class="icon" name="arrow-back-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-toolbar>
+        </ion-col>
+      </ion-row>
+  
+  
+      <ion-row>
+        <ion-col>
+          <ion-card class="card" *ngFor="let eveningTasks of presetTasksEvening">
+            <ion-card-content>
+              <ion-row>
+                <ion-col>
+                  <ion-card-title class="title">{{eveningTasks.title}}</ion-card-title>
+                </ion-col>
+                <ion-col>
+                    <img src={{eveningTasks.img}} class="img"/>
+                  </ion-col>
+                <ion-col>
+                  <ion-button class="button" fill="clear" size="large" color="dark"
+                    (click)="taskLink(eveningTasks.pageLink)">
+                    <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  
+  
+    </ion-grid>
+  </ion-content>

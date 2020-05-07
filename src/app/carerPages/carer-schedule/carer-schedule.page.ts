@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { UserService } from '../../services/user.service';
 import { FirestoreService } from '../../services/data/firestore.service';
@@ -17,7 +17,8 @@ L10n.load({
       'saveButton': 'Add',
       'cancelButton': 'Close',
       'deleteButton': 'Remove',
-      'newEvent': 'Add Event',
+      'newEvent': 'Add Task',
+      'editEvent': 'Edit Task',
     },
   }
 });
@@ -27,7 +28,7 @@ L10n.load({
   templateUrl: './carer-schedule.page.html',
   styleUrls: ['./carer-schedule.page.scss'],
   providers: [DayService, WeekService, MonthService, AgendaService],
-
+  encapsulation: ViewEncapsulation.None
 })
 export class CarerSchedulePage implements OnInit {
 
@@ -51,6 +52,11 @@ export class CarerSchedulePage implements OnInit {
   public selectedDate = new Date(this.today);
   public allowVirtualScroll: boolean = true;
 
+  private instance: Internationalization = new Internationalization();
+  getTimeString(value: Date): string {
+    return this.instance.formatDate(value, { skeleton: 'hm' });
+  };
+
   constructor(
     private afs: AngularFirestore,
     private user: UserService,
@@ -72,7 +78,9 @@ export class CarerSchedulePage implements OnInit {
         this.test[i].StartTime = new Date(parseInt(srtTime));
         this.test[i].EndTime = new Date(parseInt(endTime));
       }
+      
       schObj.eventSettings.dataSource = this.test;
+
     })
   }
 
@@ -97,6 +105,7 @@ export class CarerSchedulePage implements OnInit {
     }
   }
 
+  
   public onActionBegin(args: any): void {
     if (args.requestType == "eventChange") {
       this.afs.doc(`users/${this.user.getUID()}/tasks/${args.changedRecords[0].DocumentId}`).update({ Subject: args.changedRecords[0].Subject });

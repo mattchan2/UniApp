@@ -4,7 +4,8 @@
     <ion-row class="ion-align-items-start">
       <ion-col>
         <ion-toolbar class="toolbar">
-          <ion-card-header class="mainTitle" slot="start">Schedule</ion-card-header>
+          <ion-card-header class="mainTitle" slot="start">My Schedule</ion-card-header>
+          <img src="../../../assets/img/schedule.png" class="img2" slot="start"/>
           <ion-button class="viewEditButton" slot="end" fill="clear" color="white" (click)="logOut()">Log Out
           </ion-button>
         </ion-toolbar>
@@ -20,12 +21,71 @@
               <e-view option='Day' [allowVirtualScrolling]="allowVirtualScroll"></e-view>
               <e-view option='Week' [allowVirtualScrolling]="allowVirtualScroll"></e-view>
               <e-view option='Month' [allowVirtualScrolling]="allowVirtualScroll"></e-view>
-              <e-view option='Agenda' [allowVirtualScrolling]="allowVirtualScroll"></e-view>
+              <e-view option='Agenda' [allowVirtualScrolling]="allowVirtualScroll">
+                <ng-template #eventTemplate let-data>
+                  <div class="template-wrap">
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col>
+                          <div class="subject">{{data.Subject}}</div>
+                          <div class="time">{{getTimeString(data.StartTime)}} - {{getTimeString(data.EndTime)}}</div>
+                        </ion-col>
+                        <ion-col>
+                          <img class="img" src="../../../assets/img/{{data.img}}" />
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </div>
+                </ng-template>
+              </e-view>
 
             </e-views>
-            <!-- <ng-template #editorTemplate>
-            
-            </ng-template> -->
+
+            <ng-template #quickInfoTemplates class="header">
+            </ng-template>
+            <ng-template #editorTemplates>
+            </ng-template>
+
+            <!-- <ng-template #quickInfoTemplatesContent let-data>
+                <div *ngIf="data.elementType == 'cell'" class="e-cell-content">
+                  <form class="e-schedule-form">
+                    <div style="padding:10px">
+                      <input class="subject e-field e-input" type="text" name="Subject" placeholder="Title" style="width:100%">
+                      </div>
+                      <div style="padding:10px">
+                        <input class="location e-field e-input" type="text" name="Location" placeholder="Location" style="width:100%">
+                      </div>
+                  </form>
+                </div>
+                <div *ngIf="data.elementType == 'event'" class="e-event-content">
+                  <div class="start-time">Start: {{data.StartTime.toLocaleString()}}</div>
+                  <div class="end-time">End: {{data.EndTime.toLocaleString()}}</div>
+                  <div *ngIf="data.Location != undefined && data.Location != ''" class="location">Location: {{data.Location}}
+                  </div>
+                </div>
+              </ng-template> -->
+            <!-- <ng-template #quickInfoTemplatesFooter let-data>
+                <div *ngIf="data.elementType == 'cell'" class="e-cell-footer">
+                  <div class="left-button">
+                    <button class="e-event-details" title="Extra Details" (click)="onDetailsClick($event)">More Details</button>
+                  </div>
+                  <div class="right-button">
+                    <button class="e-event-create" title="Add" (click)="onAddClick($event)">Add</button>
+                  </div>
+                </div>
+                <div *ngIf="data.elementType == 'event'" class="e-event-footer">
+                  <div class="left-button">
+                    <button class="e-delete" title="Delete" (click)="onDeleteClick($event)">Delete</button>
+                    <button *ngIf="data.RecurrenceRule != undefined && data.RecurrenceRule != ''" class="e-delete-series"
+                        title="Delete" (click)="onDeleteClick($event)">Delete Series</button>
+                  </div>
+                  <div class="right-button">
+                    <button class="e-edit" title="Edit" (click)="onEditClick($event)">Edit</button>
+                    <button *ngIf="data.RecurrenceRule != undefined && data.RecurrenceRule != ''" class="e-edit-series"
+                        title="Edit" (click)="onEditClick($event)">Edit Series</button>
+                  </div>
+                </div>
+              </ng-template> -->
           </ejs-schedule>
         </ion-card>
       </ion-col>

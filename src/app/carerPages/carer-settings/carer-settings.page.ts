@@ -12,6 +12,7 @@ export class CarerSettingsPage implements OnInit {
   Settings: any[] = [{name: "Account", link: "/carer-tabs/account"},
   {name: "About", link: "/carer-tabs/about"},
   {name: "User Controls", link: "/carer-tabs/user-controls"},
+  {name: "Privacy", link: "/carer-tabs/privacy"},
   {name: "Log Out", link: "LogOut"}
 ]
 

@@ -22,6 +22,9 @@
                 <ion-card-title class="title">{{morningTasks.title}}</ion-card-title>
               </ion-col>
               <ion-col>
+                <img src={{morningTasks.img}} class="img"/>
+              </ion-col>
+              <ion-col>
                 <ion-button class="button" fill="clear" size="large" color="dark"
                   (click)="taskLink(morningTasks.pageLink)">
                   <ion-icon name="arrow-forward-circle-outline"></ion-icon>

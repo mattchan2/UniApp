@@ -5,12 +5,12 @@
 .title{
     position: relative;
     text-align: center;
-    padding: 10%;
+    padding: 5%;
 }
 
 .addButton{
     position: relative;
-    margin: 10%;
+    margin: 5%;
 }
 
 .input{
@@ -22,10 +22,11 @@
 }
 
 .toolbar{
-    padding-top: 10%;
+    --background: white;
 }
 
 .card{
+    height: 620px;
 
 }
 

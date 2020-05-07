@@ -26,7 +26,7 @@
 .mainTitle{
     color: white;
     font-size: xx-large;
-    font-weight: bold;
+    //font-weight: bold;
     text-align: left;
 }
 
@@ -72,4 +72,29 @@
 .card{
     position: relative;
     padding-bottom: 5%;
+    height: 300px;
+}
+
+.e-popup-header{
+    padding-top: 15%;
+}
+
+.e-header-icon-wrapper{
+
+}
+
+.header{
+    margin-top: 20%;
+    
+}
+
+.img{
+    height: 100px;
+    width: 100px;
+    
+}
+
+.img2{
+    height: 50px;
+    width: 75px;
 }

@@ -1,0 +1,56 @@
+.itemLabel{
+    font-size: large;
+    color: black;
+}
+
+.toolbar{
+    --background: #33749c;
+}
+
+.title{
+    font-size: x-large;
+    color: black;
+    text-align: left;
+    float: left;
+
+}
+.button{
+    color: black;
+    float: right;   
+}
+
+.backButton{
+    --color: white;
+}
+
+.content{
+    --background: #33749c;
+}
+
+.card{
+
+}
+
+.icon{
+    color: white;
+}
+
+.toolbar{
+    --background: #33749c;
+    position: relative;
+    margin-top: 5%;
+    text-align: center;
+
+}
+
+.mainTitle{
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.img{
+    height: 100px;
+    width: 100px;
+}

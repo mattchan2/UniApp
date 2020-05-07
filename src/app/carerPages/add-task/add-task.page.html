@@ -35,7 +35,7 @@
                   </ion-select-option>
                 </ion-select>
               </ion-item>
-
+              
               <ion-item>
                 <ion-label position="floating">Details</ion-label>
                 <ion-input autocapitalize="words" type="text" [(ngModel)]="inputTaskDetails"></ion-input>
@@ -52,6 +52,7 @@
                 <ion-datetime [(ngModel)]="inputEndTime" displayFormat="DDD D MMM hh:mm A" minuteValues="0,15,30,45">
                 </ion-datetime>
               </ion-item>
+
 
               <ion-button class="addButton" color="dark" fill="outline" shape="round" type="submit" expand="block"
                 (click)="createTaskNew()">Add</ion-button>

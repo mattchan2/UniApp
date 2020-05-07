@@ -11,6 +11,7 @@ export class UserSettingsPage implements OnInit {
 
   Settings: any[] = [{name: "Account", link: "/user-tabs/account"},
   {name: "About", link: "/user-tabs/about"},
+  {name: "Privacy", link: "/user-tabs/privacy"},
   {name: "Log Out", link: "LogOut"}
 ]
 

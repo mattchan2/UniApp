@@ -29,7 +29,7 @@ const routes: Routes = [
     path: 'tasks-menu',
     loadChildren: () => import('./userPages/tasks-menu/tasks-menu.module').then( m => m.TasksMenuPageModule)
   },
-  
+
 ];
 
 @NgModule({

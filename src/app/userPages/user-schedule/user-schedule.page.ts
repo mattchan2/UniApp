@@ -9,6 +9,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Task } from '../../services/task.interface';
 import { Observable } from 'rxjs';
 import { DayService, WeekService, MonthService, AgendaService, EventSettingsModel } from '@syncfusion/ej2-angular-schedule';
+import { L10n, Internationalization } from '@syncfusion/ej2-base';
+
+L10n.load({
+  'en-US': {
+      'schedule': {
+          'saveButton': 'Add',
+          'cancelButton': 'Close',
+          'deleteButton': 'Remove',
+          'newEvent': 'Add Task',
+      },
+  }
+});
 
 @Component({
   selector: 'app-user-schedule',
@@ -32,6 +44,12 @@ export class UserSchedulePage implements OnInit {
   public selectedDate = new Date(this.today);
   public allowVirtualScroll: boolean = true;
   public readonly: boolean = true;
+
+  private instance: Internationalization = new Internationalization();
+  getTimeString(value: Date): string {
+    return this.instance.formatDate(value, { skeleton: 'hm' });
+  };
+
 
   constructor(
     private afs: AngularFirestore,

@@ -78,7 +78,8 @@
     <ion-row class="ion-align-items-start">
       <ion-col>
         <ion-toolbar class="toolbar">
-          <ion-card-header class="mainTitle" slot="start">Schedule</ion-card-header>
+          <ion-card-header class="mainTitle" slot="start">My Schedule</ion-card-header>
+          <img src="../../../assets/img/schedule.png" class="img" slot="start" />
           <ion-button class="viewEditButton" slot="end" fill="clear" color="white" (click)="logOut()">Log Out
           </ion-button>
         </ion-toolbar>
@@ -88,9 +89,53 @@
     <ion-row class="ion-align-items-center">
       <ion-col>
         <ion-card>
-          <ejs-schedule width='100%' height='600px' [selectedDate]="selectedDate" [currentView]="currentView" [eventSettings]='eventSettings'>
+          <ejs-schedule width='100%' height='600px' [selectedDate]="selectedDate" [currentView]="currentView"
+            [eventSettings]='eventSettings'>
             <e-views>
-              <e-view option='Agenda' [allowVirtualScrolling]="allowVirtualScroll" [readonly]="isReadOnly"></e-view>
+              <e-view option='Agenda' [allowVirtualScrolling]="allowVirtualScroll" [readonly]="isReadOnly">
+
+                <ng-template #eventTemplate let-data>
+                  <div class="template-wrap">
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col>
+                          <div class="subject">{{data.Subject}}</div>
+                          <div class="time">{{getTimeString(data.StartTime)}} - {{getTimeString(data.EndTime)}}</div>
+                        </ion-col>
+                        <ion-col>
+                          <img class="img2" src="../../../assets/img/{{data.img}}" />
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </div>
+                </ng-template>
+
+                <ng-template #quickInfoTemplatesContent let-data>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col>
+                        <div class="subject">Task: {{data.Subject}}</div>
+                        <div class="time">Time: {{getTimeString(data.StartTime)}} - {{getTimeString(data.EndTime)}}</div>
+                        <div class="description">Description: {{data.Description}}</div>
+                      </ion-col>
+                      <ion-col>
+                        <ion-button class="backButton" fill="clear" href="../../user-tabs/{{data.link}}" size="large"
+                          color="dark">Instructions
+                          <ion-icon class="icon" name="arrow-forward-circle-outline"></ion-icon>
+                        </ion-button>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col>
+                        <img class="img3" src="../../../assets/img/{{data.img}}" />
+                      </ion-col>
+
+                    </ion-row>
+                  </ion-grid>
+                </ng-template>
+              </e-view>
+
+
 
             </e-views>
             <!-- <ng-template #editorTemplate>

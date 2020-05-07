@@ -1,0 +1,48 @@
+<ion-content padding class="content">
+
+    <ion-grid class="ion-align-items-center">
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-slides pager="{true}" class="slides">
+            
+            <ion-slide>
+              <ion-card class="card">
+                <ion-card-content>
+                  <ion-buttons class="backButton" fill="clear" color="dark" (click)="menuLink()" size="large">
+                    <ion-icon class="icon" name="arrow-back-circle-outline"></ion-icon>
+                  </ion-buttons>
+                  <div class="photo">
+                    <img src="../../assets/img/breakfast.png" />
+                  </div>
+                  <div class="instruction">
+                    <h1>Breakfast:</h1>
+                    <h2>Swipe to continue!</h2>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+  
+  
+            <ion-slide>
+              <ion-card class="card">
+                <ion-card-content>
+                  <div class="photoEnd">
+                    <img src="../../assets/img/WellDone.png" />
+                  </div>
+                  <div class="returnButton">
+                    <ion-button (click)="menuLink()" fill="outline" color="dark">Well Done!</ion-button>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+  
+          </ion-slides>
+  
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  
+  
+   
+  
